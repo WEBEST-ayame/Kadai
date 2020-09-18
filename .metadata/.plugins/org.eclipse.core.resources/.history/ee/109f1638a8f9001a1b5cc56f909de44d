@@ -45,6 +45,6 @@ public class Option {
 	    }
 	    int index = readInt("数字を入力してください。");
 	    return options[index];
-//コメント追加
+
 	  }
 }
