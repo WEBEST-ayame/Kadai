@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="リソース &apos;オブジェクト指向課題&apos; を削除" deleteContents="false" description="リソース &apos;オブジェクト指向課題&apos; を削除" element1="/オブジェクト指向課題" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1595311541410"/>&#x0A;<refactoring comment="リソース名 &apos;Kadai&apos; を &apos;objKadai&apos; に変更します" description="リソース &apos;Kadai&apos; の名前変更" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Kadai" name="objKadai" stamp="1595311563863" updateReferences="true"/>
+</session>

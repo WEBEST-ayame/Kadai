@@ -1,0 +1,18 @@
+
+class Person {
+	private String name;
+	private int age;
+
+	public void setName( String nm ) {
+	name = nm;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public void showProfile() {
+	System.out.println( "名前は、" + name + "です。" );
+	System.out.println( "年齢は、" + age + "です。" );
+	}
+}

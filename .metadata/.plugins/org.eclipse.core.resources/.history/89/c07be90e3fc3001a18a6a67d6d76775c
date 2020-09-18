@@ -1,0 +1,13 @@
+
+public class Kadai01 {
+
+	public static void main(String[] args) {
+		Person taro_yamada = new Person();
+		taro_yamada.setName("Taro yamada");
+		taro_yamada.setAge(47);
+		
+		taro_yamada.showProfile();
+
+	}
+
+}
