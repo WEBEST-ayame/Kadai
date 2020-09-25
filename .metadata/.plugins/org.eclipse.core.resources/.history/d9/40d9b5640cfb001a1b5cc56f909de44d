@@ -1,0 +1,26 @@
+import java.io.IOException;
+
+public class ReadString {
+	public String readString(String message) {
+		  while(true){
+		    //メッセージを出力
+			  System.out.print(message + ">");
+		    //入力を取得する
+		    String str;
+		    try{
+		      str = in.readLine();
+		    }catch(IOException e){
+		      //例外発生時にはメッセージを出力してやり直す
+		    	System.out.println(e.getMessage());
+		      continue;
+		    }
+		    //空文字の場合は警告してやり直し
+		    if(str.isEmpty()){
+		    	System.out.println("なにも入力がありません。");
+		      continue;
+		    }
+		    //取得した文字を返す
+		    return str;
+		  }
+		}
+}
