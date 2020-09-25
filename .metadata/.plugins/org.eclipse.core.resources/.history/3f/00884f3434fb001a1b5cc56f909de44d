@@ -1,0 +1,74 @@
+import java.util.Scanner;
+
+public class Kadai03 {
+	public static void main(String args[]) {
+		// 選択肢
+	    String[] options = new String[]{"円の面積", "円周", "球の体積", "球の表面積"};
+
+	    System.out.print("計算したい項目をお選び下さい。");
+	    for(int i = 0;i < options.length;i++){
+	    	System.out.println(i+1 + ":" + options[i]);
+	    }
+
+	    Scanner scanner = new Scanner(System.in);
+	    String choices = scanner.nextLine();
+
+	    int select = readInt(choices);
+
+	    System.out.println("ご注文は" + select + "ですね。");
+
+	    //Scannerクラスで入力を受け付け、半径の読み込み
+        System.out.println("半径を入力してください");
+
+        Scanner scan = new Scanner(System.in);
+        double radius = scan.nextDouble();
+
+        //インスタンス化しCircleクラスのコンストラクタを呼び出す
+        Circle circle = new Circle(radius);
+
+        //インスタンス化しSphereクラスのコンストラクタを呼び出す
+        Sphere sphere = new Sphere(radius);
+
+
+        if (choices == "1") {
+        	 //Circleクラスで作成した円の面積の計算のメソッドを呼び出す
+            double areaOfCircle = circle.area();
+            System.out.println("円の面積は " + areaOfCircle);
+        } else if (choices == "2") {
+        	//Circleクラスで作成した円周の計算のメソッドを呼び出す
+            double lengthOfCircle = circle.length();
+            System.out.println("円周の長さは" + lengthOfCircle);
+        }else if (choices == "3") {
+            //Sphereクラスで作成した球の体積の計算のメソッドを呼び出す
+            double volumeOfBall = sphere.volume();
+            System.out.println("球の体積は" + volumeOfBall);
+        }else {
+        	 //Sphereクラスで作成した球の表面積の計算のメソッドを呼び出す
+            double areaOfSurfaceOfBall = sphere.areaOfSurface();
+            System.out.println("球の表面積は" + areaOfSurfaceOfBall);
+        }
+
+
+        //Scannerメソッドをクローズ
+        scanner.close();
+        scan.close();
+    }
+
+	public static int readInt(String choices) {
+	    while(true){
+	      //入力を取得する
+	      int value;
+	      try{
+	        //intに変換する
+	        value = Integer.parseInt(choices);
+	      }catch(NumberFormatException e){
+	        //変換に失敗した場合は警告してやり直し
+	    	  System.out.println("数字ではありません。");
+	        continue;
+	      }
+
+	      //変換した値を返す
+	      return value;
+	    }
+	  }
+}

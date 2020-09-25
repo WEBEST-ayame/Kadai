@@ -1,0 +1,11 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+public class TerminalUtil {
+ BufferedReader in;
+ PrintStream out;
+ public TerminalUtil() {
+   in = new BufferedReader(new InputStreamReader(System.in));
+   out = System.out;
+ }
+}

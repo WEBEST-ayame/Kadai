@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Kadai03 {
+	public static void main(String args[]) {
+		// インスタンス作成
+		TerminalUtil terminalUtil = new TerminalUtil();
+
+		// 選択肢
+	    String[] options = new String[]{"円の面積", "円周", "球の体積", "球の表面積"};
+
+	    String select = terminalUtil.readOption("計算したい項目をお選び下さい。", options);
+
+	    System.out.println("ご注文は" + select + "ですね。");
+
+
+
+        Scanner scanner = new Scanner(System.in);
+
+        //Scannerクラスで入力を受け付け、半径の読み込み
+        System.out.println("数字を入力してください");
+        double radius = scanner.nextDouble();
+
+        int selectedOption = terminalUtil.readInt(terminalUtil.choices);
+
+        //インスタンス化しCircleクラスのコンストラクタを呼び出す
+        Circle circle = new Circle(radius);
+
+        //インスタンス化しSphereクラスのコンストラクタを呼び出す
+        Sphere sphere = new Sphere(radius);
+
+
+        if (selectedOption == 0) {
+        	 //Circleクラスで作成した円の面積の計算のメソッドを呼び出す
+            double areaOfCircle = circle.area();
+            System.out.println("円の面積は " + areaOfCircle);
+        } else if (selectedOption == 1) {
+        	//Circleクラスで作成した円周の計算のメソッドを呼び出す
+            double lengthOfCircle = circle.length();
+            System.out.println("円周の長さは" + lengthOfCircle);
+        }else if (selectedOption == 2) {
+            //Sphereクラスで作成した球の体積の計算のメソッドを呼び出す
+            double volumeOfBall = sphere.volume();
+            System.out.println("球の体積は" + volumeOfBall);
+        }else {
+        	 //Sphereクラスで作成した球の表面積の計算のメソッドを呼び出す
+            double areaOfSurfaceOfBall = sphere.areaOfSurface();
+            System.out.println("球の表面積は" + areaOfSurfaceOfBall);
+        }
+
+
+        //Scannerメソッドをクローズ
+        scanner.close();
+    }
+}

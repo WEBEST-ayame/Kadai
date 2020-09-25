@@ -1,0 +1,46 @@
+import java.io.IOException;
+
+public class ReadInt extends TerminalUtil {
+	public int readInt(String message, int min, int max) {
+	    while(true){
+	      //メッセージを出力
+	      System.out.print(message + ">");
+	      //入力を取得する
+	      String str;
+	      try{
+	        str = in.readLine();
+	      }catch(IOException e){
+	        //例外発生時にはメッセージを出力してやり直す
+	    	  System.out.println(e.getMessage());
+	        continue;
+	      }
+	      int value;
+	      try{
+	        //intに変換する
+	        value = Integer.parseInt(str);
+	      }catch(NumberFormatException e){
+	        //変換に失敗した場合は警告してやり直し
+	    	  System.out.println("数字ではありません。");
+	        continue;
+	      }
+	      if(value < min || value > max){
+	        //値が範囲外の場合は警告してやり直し
+	    	  System.out.println(min + "以上" + max + "以下の数字にしてください。");
+	        continue;
+	      }
+	      //変換した値を返す
+	      return value;
+	    }
+	  }
+	public String readOption(String message, String[] options){
+	    //メッセージを出力
+	    out.println(message);
+	    for(int i = 0;i < options.length;i++){
+	      out.println(i + ":" + options[i]);
+	    }
+	    int index = readInt("数字を入力してください。", 0, options.length - 1);
+	    return options[index];
+
+	  }
+
+}
